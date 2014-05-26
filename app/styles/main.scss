@@ -1,8 +1,14 @@
 // bower:scss
 @import "../bower_components/bourbon/dist/_bourbon.scss";
+@import "../bower_components/neat/app/assets/stylesheets/neat";
 // endbower
 
 
+
+
+/* =Typography */
+
+/* =Basics */
 html {
 }
 
@@ -12,9 +18,6 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
 }
-
-/* =Basics */
-
 
 /* =Grid */
 section {
@@ -30,10 +33,12 @@ section {
     font-weight: 200;
     line-height: 30px;
     text-align: center;
-    //background-color: #eee;
+    background: rgba(255,255,255,0.25);
     border-radius: 6px;
-    margin-top: 20%;
-    color: #000;
+    margin-top: 7.5%;
+    color: #fff;
+    padding: 20px;
+    padding-top: 60px;
     h1 {
         font-size: 60px;
         line-height: 1;
@@ -52,9 +57,38 @@ section {
 /* =Mail Subscription Form */
 #mc_embed_signup {
     @include fill-parent;
-    width: 100%;
-    clear: left;
-    #mc-embedded-subscribe-form {
+    //clear: left;
 
+    #mc-embedded-subscribe-form {
+      @include fill-parent;
+      display: inline-block;
+    }
+
+    div {
+      display: inline;
+    }
+    .mc-field-group {
+      @include fill-parent;
+      margin: 0 auto;
+      text-align: center;
+      height: 100px;
+      display: inline-block;
+      float: left;
+    }
+
+    input {
+        color: #000;
+        //display: inline;
+        &.email {
+          width: 50%;
+          clear: right;
+          padding: 4px;
+        }
+
+        &.button {
+          width: 20%;
+          clear: both;
+          padding: 6px;
+        }
     }
 }
