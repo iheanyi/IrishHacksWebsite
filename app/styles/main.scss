@@ -4,7 +4,9 @@
 // endbower
 
 
+/* =SASS Variables */
 
+$main-color: #0F5263;
 
 /* =Typography */
 
@@ -13,7 +15,7 @@ html {
 }
 
 body {
-    @include background(url('../images/bg.png'), center no-repeat);
+    @include background(url('../images/bgedit.png'), center no-repeat);
     background-size: cover;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
@@ -25,24 +27,34 @@ section {
 }
 
 /* =Splash Page */
+.logo {
+  @include span-columns(6);
+
+  @include breakpoint(700px) {
+
+  }
+}
+
 .center-unit {
-    @include span-columns(10);
-    @include shift(1);
+    @include fill-parent;
+    //@include shift(1);
     //width: 300px;
     font-size: 18px;
     font-weight: 200;
-    line-height: 30px;
-    text-align: center;
-    background: rgba(255,255,255,0.25);
-    border-radius: 6px;
+    //line-height: 30px;
+    //text-align: center;
+    //background: rgba(0,0,0,0.25);
+    //border-radius: 6px;
     margin-top: 7.5%;
     color: #fff;
-    padding: 20px;
+    //padding: 20px;
     padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: right;
     h1 {
-        font-size: 60px;
+        font-size: 41px;
         line-height: 1;
-        letter-spacing: -1px;
+        letter-spacing: -0.5px;
     }
 }
 
@@ -53,10 +65,24 @@ section {
     padding: 0.2em 0;
 }
 
+.blue {
+  color: lighten($main-color, 10%);
+}
+
+/* = Header Text */
+.head-info {
+  @include span-columns(6);
+  text-align: left;
+  padding-left: 20px;
+  margin-top: -2.5%;
+
+  @include breakpoint(700px) {
+    //@include span-columns(12);
+  }
+}
 
 /* =Mail Subscription Form */
 #mc_embed_signup {
-    @include fill-parent;
     //clear: left;
 
     #mc-embedded-subscribe-form {
@@ -70,24 +96,43 @@ section {
     .mc-field-group {
       @include fill-parent;
       margin: 0 auto;
-      text-align: center;
+      text-align: left;
       height: 100px;
       display: inline-block;
       float: left;
     }
 
+    .subscribe-message {
+      font-weight: lighter;
+      letter-spacing: 1px;
+      font-size: 18px;
+    }
+
+
     input {
+
         color: #000;
+        width: 100%;
         //display: inline;
+
+        @include placeholder {
+          font-weight: lighter;
+        }
         &.email {
-          width: 50%;
+          width: 70%;
           clear: right;
-          padding: 4px;
+          padding: 5px;
+          float: left;
+          border: 0;
         }
 
         &.button {
           width: 20%;
-          clear: both;
+          background-color: #6C5531;
+          border: 0;
+          color: #fff;
+          font-weight: lighter;
+          float: left;
           padding: 6px;
         }
     }
