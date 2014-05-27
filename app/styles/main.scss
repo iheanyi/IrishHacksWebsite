@@ -7,7 +7,9 @@
 /* =SASS Variables */
 
 $main-color: #0F5263;
-
+$mobile: new-breakpoint(max-width 600px 4);
+$visual-grid: true;
+$visual-grid-index: front;
 /* =Typography */
 
 /* =Basics */
@@ -30,8 +32,11 @@ section {
 .logo {
   @include span-columns(6);
 
-  @include breakpoint(700px) {
-
+  @include media($mobile) {
+    @include span-columns(12);
+    //@include shift(4);
+    @include omega();
+    text-align: left;
   }
 }
 
@@ -76,8 +81,10 @@ section {
   padding-left: 20px;
   margin-top: -2.5%;
 
-  @include breakpoint(700px) {
+  @include media($mobile) {
     //@include span-columns(12);
+    @include span-columns(12);
+    //@include shift(4);
   }
 }
 
@@ -127,13 +134,18 @@ section {
         }
 
         &.button {
+          vertical-align: top;
           width: 20%;
           background-color: #6C5531;
           border: 0;
           color: #fff;
           font-weight: lighter;
           float: left;
-          padding: 6px;
+          padding: 5.5px;
+
+          &:hover {
+            background-color: lighten(#6C5531, 10%);
+          }
         }
     }
 }
