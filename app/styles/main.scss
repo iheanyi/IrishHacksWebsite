@@ -131,6 +131,13 @@ section {
           padding: 5px;
           float: left;
           border: 0;
+
+          @include media($mobile) {
+            width: 50%;
+            @include placeholder {
+              font-size: 14px;
+            }
+          }
         }
 
         &.button {
@@ -145,6 +152,10 @@ section {
 
           &:hover {
             background-color: lighten(#6C5531, 10%);
+          }
+
+          @include media($mobile) {
+            width: 20%;
           }
         }
     }
