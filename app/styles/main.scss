@@ -7,10 +7,10 @@
 /* =SASS Variables */
 
 $main-color: #0F5263;
-$mobile: new-breakpoint(max-width 600px 4);
+$mobile: new-breakpoint(max-width 480px 6);
+$tablet: new-breakpoint(max-width 720px 6);
 $visual-grid: true;
 $visual-grid-index: front;
-/* =Typography */
 
 /* =Basics */
 html {
@@ -28,15 +28,30 @@ section {
     @include outer-container;
 }
 
+
+img {
+  max-width: 100%;
+  width: auto;
+}
+
 /* =Splash Page */
 .logo {
   @include span-columns(6);
+  padding-left: 16px;
+
+
+  @include media($tablet) {
+    @include fill-parent();
+    @include omega();
+    text-align: left;
+  }
 
   @include media($mobile) {
-    @include span-columns(12);
+    @include fill-parent();
     //@include shift(4);
     @include omega();
     text-align: left;
+    padding-right: 16px;
   }
 }
 
@@ -81,9 +96,13 @@ section {
   padding-left: 20px;
   margin-top: -2.5%;
 
+  @include media($tablet) {
+    @include span-columns(6);
+  }
   @include media($mobile) {
     //@include span-columns(12);
-    @include span-columns(12);
+    @include span-columns(6);
+    padding-right: 4px;
     //@include shift(4);
   }
 }
@@ -133,7 +152,7 @@ section {
           border: 0;
 
           @include media($mobile) {
-            width: 50%;
+            width: 70%;
             @include placeholder {
               font-size: 14px;
             }
@@ -155,7 +174,10 @@ section {
           }
 
           @include media($mobile) {
-            width: 20%;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 95%;
+            width: 25%;
           }
         }
     }
