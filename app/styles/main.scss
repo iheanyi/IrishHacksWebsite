@@ -12,6 +12,7 @@ $tablet: new-breakpoint(max-width 720px 6);
 $visual-grid: true;
 $visual-grid-index: front;
 
+
 /* =Basics */
 html {
 }
@@ -162,7 +163,7 @@ img {
         &.button {
           vertical-align: top;
           width: 20%;
-          background-color: #6C5531;
+          background-color: $main-color;
           border: 0;
           color: #fff;
           font-weight: lighter;
@@ -170,7 +171,7 @@ img {
           padding: 5.5px;
 
           &:hover {
-            background-color: lighten(#6C5531, 10%);
+            background-color: darken(#6C5531, 10%);
           }
 
           @include media($mobile) {
